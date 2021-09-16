@@ -31,6 +31,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'valloric/MatchTagAlways'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "inoremap <silent><expr> <TAB>
@@ -60,6 +62,13 @@ let g:OmniSharp_popup_options = {
 if s:using_snippets
     let g:OmniSharp_want_snippet = 1
 endif
+
+"KEYBINDINGS: {{{
+autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
+autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+autocmd FileType cs nnoremap <buffer><Space> :OmniSharpGetCodeActions<CR>
+"}}}
 "}}}
 
 " ALE: {{{
