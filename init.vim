@@ -1,5 +1,6 @@
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set relativenumber
 set expandtab
 set smartindent
 set exrc
@@ -63,12 +64,12 @@ if s:using_snippets
     let g:OmniSharp_want_snippet = 1
 endif
 
-"KEYBINDINGS: {{{
-autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
-autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-autocmd FileType cs nnoremap <buffer><Space> :OmniSharpGetCodeActions<CR>
-"}}}
+    "KEYBINDINGS: {{{
+    autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+    autocmd FileType cs nnoremap <buffer><Space> :OmniSharpGetCodeActions<CR>
+    "}}}
 "}}}
 
 " ALE: {{{
