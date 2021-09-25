@@ -34,6 +34,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'valloric/MatchTagAlways'
 Plug 'jiangmiao/auto-pairs'
+Plug 'davidhalter/jedi-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 "inoremap <silent><expr> <TAB>
