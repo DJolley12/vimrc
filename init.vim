@@ -39,12 +39,19 @@ Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
+Plug 'puremourning/vimspector'
 call plug#end()
 
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? "\<C-n>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
+" General Remappings: {{{
+nnoremap <Leader>bb :wa \| ! dotnet build<CR>
+nnoremap <Leader>nw :! tmux neww<CR>
+" }}}
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+" NERDTree: {{{
 nmap <C-f> :NERDTreeToggle<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -54,6 +61,14 @@ map <C-l> <C-w>l
 autocmd VimEnter * NERDTree
 
 filetype plugin on
+" }}}
+" Fzf: {{{
+nnoremap <Leader>ff :BLines<CR>
+" }}}
+" Vimspector: {{{
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+nnoremap <Leader>vr :VimspectorReset<CR>
+" }}}
 
 " OMNISHARP: {{{
 let g:OmniSharp_start_server = 1
@@ -62,18 +77,37 @@ let g:omnicomplete_fetch_full_documentation = 1
 let g:OmniSharp_timeout = 30
 let g:OmniSharp_popup_options = {
             \ 'highlight': 'Normal',
-            \ 'padding': [1],
+            \ 'padding': [0, 0, 0, 0],
             \ 'border': [1]
             \}
-if s:using_snippets
-    let g:OmniSharp_want_snippet = 1
+"let g:OmniSharp_selector_ui = 'ctrlp'
+if has('nvim')
+    let g:OmniSharp_popup_options = {
+                \ 'winhl': 'Normal:NormalFloat'
+                \}
+else
+    let g:OmniSharp_popup_options = {
+                \ 'highlight': 'Normal',
+                \ 'padding': [0, 0, 0, 0],
+                \ 'border': [1]
+                \}
 endif
+let g:OmniSharp_popup_mappings = {
+            \ 'sigNext': '<C-n>',
+            \ 'sigPrev': '<C-p>',
+            \ 'pageDown': ['<C-f>', '<PageDown>'],
+            \ 'pageUp': ['<C-b>', '<PageUp>']
+            \}
 
     "KEYBINDINGS: {{{
     autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-    autocmd FileType cs nnoremap <buffer><Space> :OmniSharpGetCodeActions<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+    autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+
     "}}}
 "}}}
 
@@ -83,11 +117,19 @@ let g:ale_sign_warning = '•'
 let g:ale_sign_info = '·'
 let g:ale_sign_style_error = '·'
 let g:ale_sign_style_warning = '·'
+let g:ale_completion_autoimport = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 let g:ale_linters = { 'cs': ['OmniSharp'] }
 " }}}
 
 " THEME: {{{
+
+"if has('termguicolors')
+"    set termguicolors
+"endif
+
 colorscheme bluewery
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
