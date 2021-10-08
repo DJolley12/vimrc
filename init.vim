@@ -18,6 +18,9 @@ set scrolloff=8
 set signcolumn=yes
 set colorcolumn=105
 set signcolumn=yes
+set autoread
+set mouse=a
+au CursorHold * checktime
 "source ~/.vim/colors/zenburn.vim
 "source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
@@ -40,6 +43,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " General Remappings: {{{
@@ -100,14 +104,18 @@ let g:OmniSharp_popup_mappings = {
             \}
 
     "KEYBINDINGS: {{{
+    autocmd FileType cs nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
     autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-    autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
+    "autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
     autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
-
+    autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
+    autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     "}}}
 "}}}
 
