@@ -21,6 +21,8 @@ set signcolumn=yes
 set autoread
 set mouse=a
 au CursorHold * checktime
+au FocusGained,BufEnter * :silent! checktime
+au FocusLost,WinLeave * :silent! w
 "source ~/.vim/colors/zenburn.vim
 "source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
@@ -28,6 +30,8 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'relastle/bluewery.vim'
+Plug 'morhetz/gruvbox'
+Plug 'https://github.com/jnurmine/Zenburn.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
@@ -44,6 +48,7 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
+Plug 'https://github.com/ap/vim-css-color.git'
 call plug#end()
 
 " General Remappings: {{{
@@ -68,6 +73,7 @@ filetype plugin on
 " }}}
 " Fzf: {{{
 nnoremap <Leader>ff :BLines<CR>
+nnoremap <C-p> :GFiles<CR>
 " }}}
 " Vimspector: {{{
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
@@ -138,7 +144,9 @@ let g:ale_linters = { 'cs': ['OmniSharp'] }
 "    set termguicolors
 "endif
 
-colorscheme bluewery
+"colorscheme bluewery
+"colorscheme gruvbox
+colorscheme zenburn
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
