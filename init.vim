@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'relastle/bluewery.vim'
 Plug 'morhetz/gruvbox'
 Plug 'https://github.com/jnurmine/Zenburn.git'
+Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
@@ -110,6 +111,8 @@ let g:OmniSharp_popup_mappings = {
             \}
 
     "KEYBINDINGS: {{{
+    
+    " C#
     autocmd FileType cs nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
     autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
@@ -120,6 +123,10 @@ let g:OmniSharp_popup_mappings = {
     autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
     "autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
     autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+    "autocmd FileType cs,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
+    autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+
+    " RUST
     autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
     autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     "}}}
