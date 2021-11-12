@@ -49,11 +49,8 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
-<<<<<<< HEAD
 Plug 'xero/sourcerer.vim'
-=======
 Plug 'https://github.com/ap/vim-css-color.git'
->>>>>>> 41dd791d24b5fe110abeed85898ddb829af5152a
 call plug#end()
 
 " General Remappings: {{{
@@ -157,14 +154,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 "    set termguicolors
 "endif
 
-<<<<<<< HEAD
 "colorscheme sourcerer
 colorscheme bluewery
-=======
 "colorscheme bluewery
 "colorscheme gruvbox
 colorscheme zenburn
->>>>>>> 41dd791d24b5fe110abeed85898ddb829af5152a
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
