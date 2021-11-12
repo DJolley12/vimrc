@@ -142,7 +142,7 @@ let g:ale_completion_autoimport = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-let g:ale_linters = { 'cs': ['OmniSharp'] }
+let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 " }}}
 
 " THEME: {{{
