@@ -44,6 +44,7 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
+Plug 'xero/sourcerer.vim'
 call plug#end()
 
 " General Remappings: {{{
@@ -71,7 +72,9 @@ nnoremap <Leader>ff :BLines<CR>
 " }}}
 " Vimspector: {{{
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-nnoremap <Leader>vr :VimspectorReset<CR>
+nnoremap <Leader>vr :VimspectorReset<CR><CR>
+nnoremap <Leader>vw :VimspectorWatch
+nnoremap <Leader>c :call vimspector#StepOver()<CR>
 " }}}
 
 " OMNISHARP: {{{
@@ -138,6 +141,7 @@ let g:ale_linters = { 'cs': ['OmniSharp'] }
 "    set termguicolors
 "endif
 
+"colorscheme sourcerer
 colorscheme bluewery
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
