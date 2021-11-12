@@ -21,8 +21,6 @@ set signcolumn=yes
 set autoread
 set mouse=a
 au CursorHold * checktime
-au FocusGained,BufEnter * :silent! checktime
-au FocusLost,WinLeave * :silent! w
 "source ~/.vim/colors/zenburn.vim
 "source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
@@ -30,9 +28,6 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'relastle/bluewery.vim'
-Plug 'morhetz/gruvbox'
-Plug 'https://github.com/jnurmine/Zenburn.git'
-Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
@@ -49,11 +44,6 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
-<<<<<<< HEAD
-Plug 'xero/sourcerer.vim'
-=======
-Plug 'https://github.com/ap/vim-css-color.git'
->>>>>>> 41dd791d24b5fe110abeed85898ddb829af5152a
 call plug#end()
 
 " General Remappings: {{{
@@ -78,13 +68,10 @@ filetype plugin on
 " }}}
 " Fzf: {{{
 nnoremap <Leader>ff :BLines<CR>
-nnoremap <C-p> :GFiles<CR>
 " }}}
 " Vimspector: {{{
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
-nnoremap <Leader>vr :VimspectorReset<CR><CR>
-nnoremap <Leader>vw :VimspectorWatch
-nnoremap <Leader>c :call vimspector#StepOver()<CR>
+nnoremap <Leader>vr :VimspectorReset<CR>
 " }}}
 
 " OMNISHARP: {{{
@@ -117,8 +104,6 @@ let g:OmniSharp_popup_mappings = {
             \}
 
     "KEYBINDINGS: {{{
-    
-    " C#
     autocmd FileType cs nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
     autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
     autocmd FileType cs nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
@@ -129,10 +114,6 @@ let g:OmniSharp_popup_mappings = {
     autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
     "autocmd FileType cs nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
     autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
-    "autocmd FileType cs,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
-    autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
-
-    " RUST
     autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
     autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     "}}}
@@ -148,7 +129,7 @@ let g:ale_completion_autoimport = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
+let g:ale_linters = { 'cs': ['OmniSharp'] }
 " }}}
 
 " THEME: {{{
@@ -157,14 +138,7 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 "    set termguicolors
 "endif
 
-<<<<<<< HEAD
-"colorscheme sourcerer
 colorscheme bluewery
-=======
-"colorscheme bluewery
-"colorscheme gruvbox
-colorscheme zenburn
->>>>>>> 41dd791d24b5fe110abeed85898ddb829af5152a
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
