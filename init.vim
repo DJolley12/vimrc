@@ -85,6 +85,7 @@ nnoremap <Leader>c :call vimspector#StepOver()<CR>
 " }}}
 
 " OMNISHARP: {{{
+let g:OmniSharp_popup_position = 'peek'
 let g:OmniSharp_start_server = 1
 let g:OmniSharp_server_stdio = 1
 let g:omnicomplete_fetch_full_documentation = 1
