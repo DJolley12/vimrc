@@ -29,6 +29,7 @@ au FocusLost,WinLeave * :silent! w
 syntax on
 
 call plug#begin('~/.vim/plugged')
+" Themes {{{
 Plug 'relastle/bluewery.vim'
 Plug 'morhetz/gruvbox'
 Plug 'https://github.com/jnurmine/Zenburn.git'
@@ -36,6 +37,11 @@ Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'ajh17/spacegray.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'https://github.com/lifepillar/vim-solarized8.git'
+Plug 'https://github.com/cocopon/iceberg.vim.git'
+Plug 'https://github.com/tomasiser/vim-code-dark.git'
+" }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
@@ -159,7 +165,6 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 "endif
 
 "colorscheme sourcerer
-colorscheme bluewery
 "colorscheme bluewery
 "colorscheme gruvbox
 colorscheme zenburn
@@ -168,4 +173,4 @@ let g:lightline = { 'colorscheme': 'bluewery' }
 
 " AIRLINE: {{{
 let g:airline#extensions#tabline#enabled = 1
-"}}}
+
