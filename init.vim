@@ -65,6 +65,7 @@ call plug#end()
 " General Remappings: {{{
 nnoremap <Leader>bb :wa \| ! dotnet build<CR>
 nnoremap <Leader>nw :! tmux neww<CR>
+nnoremap <Leader>vs :vsplit<CR>
 " }}}
 
 inoremap <silent><expr> <TAB>
@@ -166,8 +167,8 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 
 "colorscheme sourcerer
 "colorscheme bluewery
-"colorscheme gruvbox
-colorscheme zenburn
+colorscheme gruvbox
+"colorscheme zenburn
 let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
