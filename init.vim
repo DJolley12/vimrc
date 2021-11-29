@@ -43,6 +43,7 @@ Plug 'https://github.com/lifepillar/vim-solarized8.git'
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 Plug 'https://github.com/tomasiser/vim-code-dark.git'
 Plug 'liuchengxu/space-vim-theme'
+Plug 'dracula/vim',{'name':'dracula'}
 " }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -202,9 +203,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 
     "colorscheme sourcerer
     "colorscheme bluewery
-    colorscheme gruvbox
+    "colorscheme gruvbox
     "colorscheme zenburn
-    let g:lightline = { 'colorscheme': 'bluewery' }
+    colorscheme dracula
+    let g:lightline = { 'colorscheme': 'dracula' }
+    "let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
 " AIRLINE: {{{
@@ -224,4 +227,5 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     let g:minimap_width = 10
     let g:minimap_auto_start = 1
     left g:minimap_auto_start_win_enter = 1
+    nnoremap <silent> `` :nohlsearch<CR>:call minimap#vim#ClearColorSearch()<CR>
 " }}}
