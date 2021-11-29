@@ -65,6 +65,7 @@ Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'https://github.com/jlcrochet/vim-razor.git'
 "Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
+Plug 'https://github.com/tpope/vim-surround.git'
 call plug#end()
 
 " General Remappings: {{{
