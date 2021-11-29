@@ -60,6 +60,7 @@ Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
 Plug 'xero/sourcerer.vim'
 Plug 'https://github.com/ap/vim-css-color.git'
+Plug 'https://github.com/jlcrochet/vim-razor.git'
 call plug#end()
 
 " General Remappings: {{{
