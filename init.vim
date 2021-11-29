@@ -69,6 +69,7 @@ Plug 'https://github.com/tpope/vim-surround.git'
 call plug#end()
 
 " General Remappings: {{{
+    let mapleader = "\<space>"
     nnoremap <Leader>bb :wa \| ! dotnet build<CR>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
@@ -82,7 +83,7 @@ call plug#end()
 " }}}
 
 " NERDTree: {{{
-    nmap <C-f> :NERDTreeToggle<CR>
+    nnoremap <expr> <C-f> g:NERDTree.IsOpen() ? ':NERDTreeClose<CR>' : @% == '' ? ':NERDTree<CR>' : ':NERDTreeFind<CR>'
     map <C-h> <C-w>h
     map <C-j> <C-w>j
     map <C-k> <C-w>k
