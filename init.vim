@@ -73,6 +73,11 @@ call plug#end()
     nnoremap <Leader>bb :wa \| ! dotnet build<CR>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
+    nnoremap <Leader>bn :bn<CR>
+    nnoremap <Leader>bp :bp<CR>
+    nnoremap <Leader>bd :bd<CR>
+    nnoremap <Leader>q :q<CR>
+    nnoremap <Leader>wq :wq<CR>
 " }}}
 
 " COC: {{{
