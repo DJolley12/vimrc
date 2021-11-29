@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'relastle/bluewery.vim'
 Plug 'morhetz/gruvbox'
 Plug 'https://github.com/jnurmine/Zenburn.git'
+Plug 'xero/sourcerer.vim'
 Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'https://github.com/altercation/vim-colors-solarized.git'
 Plug 'ajh17/spacegray.vim'
@@ -41,6 +42,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'https://github.com/lifepillar/vim-solarized8.git'
 Plug 'https://github.com/cocopon/iceberg.vim.git'
 Plug 'https://github.com/tomasiser/vim-code-dark.git'
+Plug 'liuchengxu/space-vim-theme'
 " }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -58,7 +60,6 @@ Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
-Plug 'xero/sourcerer.vim'
 Plug 'https://github.com/ap/vim-css-color.git'
 Plug 'https://github.com/jlcrochet/vim-razor.git'
 "Plug 'Xuyuanp/scrollbar.nvim'
@@ -146,6 +147,32 @@ call plug#end()
         autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
         "autocmd FileType cs,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
         autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+
+        autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
+        autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+        autocmd FileType razor nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
+        "autocmd FileTyperazors nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+        autocmd FileType razor nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+        "autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
+        autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+
+        autocmd FileType cshtml nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
+        autocmd FileType cshtml nmap <silent> gd :OmniSharpGotoDefinition<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+        autocmd FileType cshtml nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
+        "autocmd FileTypecshtmls nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+        autocmd FileType cshtml nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+        "autocmd FileTypecshtmls,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
+        autocmd FileType cshtml nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
     "}}}
 "}}}
 
