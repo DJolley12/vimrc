@@ -78,6 +78,8 @@ call plug#end()
     nnoremap <Leader>bd :bd<CR>
     nnoremap <Leader>q :q<CR>
     nnoremap <Leader>wq :wq<CR>
+    nnoremap <Leader>wa :wa<CR>
+    nnoremap <Leader>wqa :wqa<CR>
 " }}}
 
 " COC: {{{
