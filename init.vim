@@ -103,7 +103,7 @@ call plug#end()
 "
 " Fzf: {{{
     nnoremap <Leader>ff :BLines<CR>
-    nnoremap <C-p> :GFiles<CR>
+    nnoremap <Leader>p :GFiles<CR>
 " }}}
 " Vimspector: {{{
     let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
