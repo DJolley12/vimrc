@@ -66,6 +66,7 @@ Plug 'https://github.com/jlcrochet/vim-razor.git'
 "Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'https://github.com/tpope/vim-surround.git'
+Plug 'https://github.com/xiyaowong/nvim-transparent'
 call plug#end()
 
 " General Remappings: {{{
@@ -237,4 +238,8 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     let g:minimap_auto_start = 1
     left g:minimap_auto_start_win_enter = 1
     nnoremap <silent> `` :nohlsearch<CR>:call minimap#vim#ClearColorSearch()<CR>
+" }}}
+
+" nvim-transparent: {{{
+    let g:transparent_enabled = v:false
 " }}}
