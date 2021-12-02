@@ -67,6 +67,7 @@ Plug 'https://github.com/jlcrochet/vim-razor.git'
 Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'https://github.com/tpope/vim-surround.git'
 Plug 'https://github.com/xiyaowong/nvim-transparent'
+Plug 'https://github.com/tpope/vim-commentary.git'
 call plug#end()
 
 " General Remappings: {{{
@@ -81,6 +82,7 @@ call plug#end()
     nnoremap <Leader>wq :wq<CR>
     nnoremap <Leader>wa :wa<CR>
     nnoremap <Leader>wqa :wqa<CR>
+    nnoremap <Leader>qa :qa<CR>
 " }}}
 
 " COC: {{{
@@ -104,7 +106,7 @@ call plug#end()
 "
 " Fzf: {{{
     nnoremap <Leader>ff :BLines<CR>
-    nnoremap <C-p> :GFiles<CR>
+    nnoremap <Leader>p :GFiles<CR>
 " }}}
 " Vimspector: {{{
     let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
