@@ -44,6 +44,8 @@ Plug 'https://github.com/cocopon/iceberg.vim.git'
 Plug 'https://github.com/tomasiser/vim-code-dark.git'
 Plug 'liuchengxu/space-vim-theme'
 Plug 'dracula/vim',{'name':'dracula'}
+Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
+Plug 'https://github.com/doums/darcula.git'
 " }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -66,7 +68,7 @@ Plug 'https://github.com/jlcrochet/vim-razor.git'
 "Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'https://github.com/tpope/vim-surround.git'
-Plug 'https://github.com/xiyaowong/nvim-transparent'
+"Plug 'https://github.com/xiyaowong/nvim-transparent'
 Plug 'https://github.com/tpope/vim-commentary.git'
 call plug#end()
 
@@ -214,11 +216,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     "    set termguicolors
     "endif
 
-    "colorscheme sourcerer
+    colorscheme sourcerer
     "colorscheme bluewery
     "colorscheme gruvbox
     "colorscheme zenburn
-    colorscheme dracula
+    "colorscheme dracula
     let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
@@ -244,5 +246,5 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
 " }}}
 
 " nvim-transparent: {{{
-    let g:transparent_enabled = v:false
+    "let g:transparent_enabled = v:false
 " }}}
