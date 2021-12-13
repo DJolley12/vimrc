@@ -70,9 +70,7 @@ Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'https://github.com/tpope/vim-surround.git'
 "Plug 'https://github.com/xiyaowong/nvim-transparent'
 Plug 'https://github.com/tpope/vim-commentary.git'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 " General Remappings: {{{
