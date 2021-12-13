@@ -94,6 +94,9 @@ call plug#end()
           \ pumvisible() ? "\<C-n>" :
           \ <SID>check_back_space() ? "\<TAB>" :
           \ coc#refresh()
+    imap <C-l> <Plug>(coc-snippets-expand-jump)
+    vmap <C-j> <Plug>(coc-snippets-select)
+    let g:coc_snippet_prev = '<c-k>'
 " }}}
 
 " NERDTree: {{{
