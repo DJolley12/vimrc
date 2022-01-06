@@ -220,9 +220,12 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     "    set termguicolors
     "endif
 
-    colorscheme sourcerer
+    "colorscheme sourcerer
     "colorscheme bluewery
-    "colorscheme gruvbox
+    let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_transparent_bg = 1
+    "medium, hard, soft
+    colorscheme gruvbox
     "colorscheme zenburn
     "colorscheme dracula
     let g:lightline = { 'colorscheme': 'dracula' }
