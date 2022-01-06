@@ -228,7 +228,7 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     colorscheme gruvbox
     "colorscheme zenburn
     "colorscheme dracula
-    let g:lightline = { 'colorscheme': 'dracula' }
+    " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
