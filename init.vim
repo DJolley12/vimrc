@@ -75,7 +75,8 @@ call plug#end()
 
 " General Remappings: {{{
     let mapleader = "\<space>"
-    nnoremap <Leader>bb :wa \| ! dotnet build<CR>
+    nnoremap <Leader>gc :execute '!git commit -m "'.input('Enter message: ').'"'<cr>
+    nnoremap <Leader>ga :execute '!git add .'<cr>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
     nnoremap <Leader>bn :bn<CR>
@@ -155,6 +156,9 @@ call plug#end()
     "KEYBINDINGS: {{{
     
         " C#
+        autocmd FileType cs nnoremap <Leader>ar :execute '!dotnet add '.input('Enter project: ').' reference '.input('Enter reference: ').''<cr>
+        autocmd FileType cs nnoremap <Leader>acr :execute '!dotnet add reference '.input('Enter reference: ').''<cr>
+        autocmd FileType cs nnoremap <Leader>bb :wa \| ! dotnet build<CR>
         autocmd FileType cs nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
         autocmd FileType cs nmap <silent> gd :OmniSharpGotoDefinition<CR>
         autocmd FileType cs nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
@@ -167,7 +171,9 @@ call plug#end()
         autocmd FileType cs nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
         "autocmd FileType cs,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
         autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+        nnoremap <Leader>rc :! tmux splitw -v tmux send-keys "dotnet run" ENTER<CR>
 
+        autocmd FileType razor nnoremap <Leader>bb :wa \| ! dotnet build<CR>
         autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
         autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
         autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
@@ -181,6 +187,7 @@ call plug#end()
         "autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
         autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
 
+        autocmd FileType cshtml nnoremap <Leader>bb :wa \| ! dotnet build<CR>
         autocmd FileType cshtml nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
         autocmd FileType cshtml nmap <silent> gd :OmniSharpGotoDefinition<CR>
         autocmd FileType cshtml nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
@@ -206,9 +213,10 @@ let g:ale_completion_autoimport = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
+let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
 
 " RUST {{{
+        autocmd FileType rs nnoremap <Leader>bb :wa \| ! cargo build<CR>
         autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
         autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     " }}}
@@ -220,9 +228,9 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rs': ['analyzer'] }
     "    set termguicolors
     "endif
 
-    colorscheme sourcerer
+    "colorscheme sourcerer
     "colorscheme bluewery
-    "colorscheme gruvbox
+    colorscheme gruvbox
     "colorscheme zenburn
     "colorscheme dracula
     let g:lightline = { 'colorscheme': 'dracula' }
