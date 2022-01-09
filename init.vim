@@ -230,10 +230,13 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
 
     "colorscheme sourcerer
     "colorscheme bluewery
+    let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_transparent_bg = 1
+    "medium, hard, soft
     colorscheme gruvbox
     "colorscheme zenburn
     "colorscheme dracula
-    let g:lightline = { 'colorscheme': 'dracula' }
+    " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
 "}}}
 
