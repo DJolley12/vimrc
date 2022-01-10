@@ -26,7 +26,7 @@ au FocusLost,WinLeave * :silent! w
 "source ~/.vim/colors/zenburn.vim
 "source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
-syntax on
+"syntax on
 
 call plug#begin('~/.vim/plugged')
 " Themes {{{
@@ -46,6 +46,7 @@ Plug 'liuchengxu/space-vim-theme'
 Plug 'dracula/vim',{'name':'dracula'}
 Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
 Plug 'https://github.com/doums/darcula.git'
+Plug 'https://github.com/sickill/vim-monokai.git'
 " }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -228,6 +229,7 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     "    set termguicolors
     "endif
 
+    syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
     let g:gruvbox_contrast_dark = 'medium' 
