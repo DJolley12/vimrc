@@ -47,6 +47,10 @@ Plug 'dracula/vim',{'name':'dracula'}
 Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
 Plug 'https://github.com/doums/darcula.git'
 Plug 'https://github.com/sickill/vim-monokai.git'
+Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
+Plug 'https://github.com/fcpg/vim-farout.git'
+Plug 'burntcarrot/punchy.vim'
+Plug 'https://github.com/NLKNguyen/papercolor-theme.git'
 " }}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
