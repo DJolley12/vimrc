@@ -50,8 +50,9 @@ Plug 'https://github.com/sickill/vim-monokai.git'
 Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
 Plug 'https://github.com/fcpg/vim-farout.git'
 Plug 'burntcarrot/punchy.vim'
-Plug 'https://github.com/NLKNguyen/papercolor-theme.git'
+Plug 'NLKNguyen/papercolor-theme'
 " }}}
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
@@ -236,10 +237,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
-    let g:gruvbox_contrast_dark = 'medium' 
-    let g:gruvbox_transparent_bg = 1
-    "medium, hard, soft
-    colorscheme gruvbox
+    "let g:gruvbox_contrast_dark = 'medium' 
+    "let g:gruvbox_transparent_bg = 1
+    ""medium, hard, soft
+    "colorscheme gruvbox
+    colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
