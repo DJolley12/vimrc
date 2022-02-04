@@ -51,6 +51,8 @@ Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
 Plug 'https://github.com/fcpg/vim-farout.git'
 Plug 'burntcarrot/punchy.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mhartington/oceanic-next'
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -237,15 +239,27 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
-    "let g:gruvbox_contrast_dark = 'medium' 
+    " let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_contrast_dark = 'soft' 
     "let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
-    "colorscheme gruvbox
-    colorscheme PaperColor
+    colorscheme gruvbox
+    "colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
+    " if (has("termguicolors"))
+    "     set termguicolors
+    " endif
+    " if (has("nvim"))
+    "     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    " endif
+    " let g:enable_bold_font = 1
+    " let g:enable_italic_font = 1
+    " let g:hybrid_transparent_background = 1
+    " colorscheme hybrid_material
+    " let g:airline_theme = "hybrid"
 "}}}
 
 " AIRLINE: {{{
