@@ -114,7 +114,7 @@ call plug#end()
     map <C-k> <C-w>k
     map <C-l> <C-w>l
 
-    autocmd VimEnter * NERDTree
+    "autocmd VimEnter * NERDTree
 
     filetype plugin on
 " }}}
