@@ -94,6 +94,7 @@ call plug#end()
     nnoremap <Leader>wa :wa<CR>
     nnoremap <Leader>wqa :wqa<CR>
     nnoremap <Leader>qa :qa<CR>
+    nnoremap <Leader>nf :execute '! touch '.input('Enter file name:').<cr>
 " }}}
 
 " COC: {{{
@@ -237,11 +238,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
-    "let g:gruvbox_contrast_dark = 'medium' 
-    "let g:gruvbox_transparent_bg = 1
-    ""medium, hard, soft
-    "colorscheme gruvbox
-    colorscheme PaperColor
+    let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_transparent_bg = 1
+    "medium, hard, soft
+    colorscheme gruvbox
+    "colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
