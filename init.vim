@@ -95,6 +95,7 @@ call plug#end()
     nnoremap <Leader>wa :wa<CR>
     nnoremap <Leader>wqa :wqa<CR>
     nnoremap <Leader>qa :qa<CR>
+    nnoremap <Leader>nf :execute '! touch '.input('Enter file name:').<cr>
 " }}}
 
 " COC: {{{
