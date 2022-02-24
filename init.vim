@@ -23,8 +23,6 @@ set mouse=a
 au CursorHold * checktime
 au FocusGained,BufEnter * :silent! checktime
 au FocusLost,WinLeave * :silent! w
-"source ~/.vim/colors/zenburn.vim
-"source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
 "syntax on
 
@@ -51,6 +49,8 @@ Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
 Plug 'https://github.com/fcpg/vim-farout.git'
 Plug 'burntcarrot/punchy.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mhartington/oceanic-next'
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -85,6 +85,7 @@ call plug#end()
     nnoremap <Leader>ga :execute '!git add .'<cr>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
+    nnoremap <Leader>hs :split<CR>
     nnoremap <Leader>bn :bn<CR>
     nnoremap <Leader>bp :bp<CR>
     nnoremap <Leader>bd :bd<CR>
@@ -180,19 +181,19 @@ call plug#end()
         autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
         nnoremap <Leader>rc :! tmux splitw -v tmux send-keys "dotnet run" ENTER<CR>
 
-        autocmd FileType razor nnoremap <Leader>bb :wa \| ! dotnet build<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
-        autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
-        "autocmd FileTyperazors nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
-        autocmd FileType razor nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
-        "autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
-        autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <Leader>bb :wa \| ! dotnet build<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
+        "autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
+        ""autocmd FileTyperazors nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+        "autocmd FileType razor nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+        ""autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
 
         autocmd FileType cshtml nnoremap <Leader>bb :wa \| ! dotnet build<CR>
         autocmd FileType cshtml nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
@@ -238,15 +239,27 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
-    let g:gruvbox_contrast_dark = 'medium' 
-    let g:gruvbox_transparent_bg = 1
-    "medium, hard, soft
+    " let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_contrast_dark = 'soft' 
+    "let g:gruvbox_transparent_bg = 1
+    ""medium, hard, soft
     colorscheme gruvbox
     "colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
+    " if (has("termguicolors"))
+    "     set termguicolors
+    " endif
+    " if (has("nvim"))
+    "     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    " endif
+    " let g:enable_bold_font = 1
+    " let g:enable_italic_font = 1
+    " let g:hybrid_transparent_background = 1
+    " colorscheme hybrid_material
+    " let g:airline_theme = "hybrid"
 "}}}
 
 " AIRLINE: {{{
