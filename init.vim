@@ -83,6 +83,7 @@ call plug#end()
     let mapleader = "\<space>"
     nnoremap <Leader>gc :execute '!git commit -m "'.input('Enter message: ').'"'<cr>
     nnoremap <Leader>ga :execute '!git add .'<cr>
+    nnoremap <Leader>gp :execute '!git push -u origin .'<cr>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
     nnoremap <Leader>hs :split<CR>
@@ -95,7 +96,6 @@ call plug#end()
     nnoremap <Leader>wa :wa<CR>
     nnoremap <Leader>wqa :wqa<CR>
     nnoremap <Leader>qa :qa<CR>
-    nnoremap <Leader>nf :execute '! touch '.input('Enter file name:').<cr>
 " }}}
 
 " COC: {{{
