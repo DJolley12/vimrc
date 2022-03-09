@@ -46,11 +46,13 @@ Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
 Plug 'https://github.com/doums/darcula.git'
 Plug 'https://github.com/sickill/vim-monokai.git'
 Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
+Plug 'artanikin/vim-synthwave84'
 Plug 'https://github.com/fcpg/vim-farout.git'
 Plug 'burntcarrot/punchy.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
+Plug 'https://github.com/iandwelker/rose-pine-vim.git'
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,7 +79,16 @@ Plug 'https://github.com/tpope/vim-surround.git'
 "Plug 'https://github.com/xiyaowong/nvim-transparent'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'honza/vim-snippets'
+Plug 'https://github.com/tpope/vim-dadbod.git', {'do': ':CocInstall coc-db'}
+Plug 'https://github.com/kristijanhusak/vim-dadbod-ui.git'
+Plug 'nanotee/sqls.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+" DB, sqls lspconfig {{{
+    :lua require('db')
+    :lua require('sqls')
+" }}}
 
 " General Remappings: {{{
     let mapleader = "\<space>"
@@ -122,7 +133,10 @@ call plug#end()
 "
 " Fzf: {{{
     nnoremap <Leader>ff :BLines<CR>
+    "nnoremap <C-f> :Rg 
     nnoremap <Leader>p :GFiles<CR>
+    nnoremap <C-p> :Files<CR>
+    "command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 " }}}
 " Vimspector: {{{
     let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
