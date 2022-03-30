@@ -53,6 +53,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 Plug 'https://github.com/iandwelker/rose-pine-vim.git'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -255,20 +256,24 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     "colorscheme bluewery
     " let g:gruvbox_contrast_dark = 'medium' 
     let g:gruvbox_contrast_dark = 'soft' 
-    "let g:gruvbox_transparent_bg = 1
+    let g:gruvbox_underline=1
+    let g:gruvbox_bold=1
+    let g:gruvbox_italic=1
+    let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
     colorscheme gruvbox
+    " set termguicolors
     "colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
-    " if (has("termguicolors"))
-    "     set termguicolors
-    " endif
-    " if (has("nvim"))
-    "     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-    " endif
+    if (has("termguicolors"))
+        set termguicolors
+    endif
+    if (has("nvim"))
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    endif
     " let g:enable_bold_font = 1
     " let g:enable_italic_font = 1
     " let g:hybrid_transparent_background = 1
