@@ -262,6 +262,7 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
     colorscheme gruvbox
+    hi! Normal ctermbg=NONE guibg=NONE
     " set termguicolors
     "colorscheme PaperColor
     "colorscheme zenburn
