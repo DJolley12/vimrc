@@ -23,8 +23,6 @@ set mouse=a
 au CursorHold * checktime
 au FocusGained,BufEnter * :silent! checktime
 au FocusLost,WinLeave * :silent! w
-"source ~/.vim/colors/zenburn.vim
-"source ~/.vim/plugged/bluewery.vim/bluewery.vim
 
 "syntax on
 
@@ -48,9 +46,14 @@ Plug 'https://github.com/gosukiwi/vim-atom-dark.git'
 Plug 'https://github.com/doums/darcula.git'
 Plug 'https://github.com/sickill/vim-monokai.git'
 Plug 'https://github.com/TroyFletcher/vim-colors-synthwave.git'
+Plug 'artanikin/vim-synthwave84'
 Plug 'https://github.com/fcpg/vim-farout.git'
 Plug 'burntcarrot/punchy.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'mhartington/oceanic-next'
+Plug 'https://github.com/iandwelker/rose-pine-vim.git'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -77,14 +80,25 @@ Plug 'https://github.com/tpope/vim-surround.git'
 "Plug 'https://github.com/xiyaowong/nvim-transparent'
 Plug 'https://github.com/tpope/vim-commentary.git'
 Plug 'honza/vim-snippets'
+Plug 'https://github.com/tpope/vim-dadbod.git', {'do': ':CocInstall coc-db'}
+Plug 'https://github.com/kristijanhusak/vim-dadbod-ui.git'
+Plug 'nanotee/sqls.nvim'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
+
+" DB, sqls lspconfig {{{
+    :lua require('db')
+    :lua require('sqls')
+" }}}
 
 " General Remappings: {{{
     let mapleader = "\<space>"
     nnoremap <Leader>gc :execute '!git commit -m "'.input('Enter message: ').'"'<cr>
     nnoremap <Leader>ga :execute '!git add .'<cr>
+    nnoremap <Leader>gp :execute '!git push -u origin .'<cr>
     nnoremap <Leader>nw :! tmux neww<CR>
     nnoremap <Leader>vs :vsplit<CR>
+    nnoremap <Leader>hs :split<CR>
     nnoremap <Leader>bn :bn<CR>
     nnoremap <Leader>bp :bp<CR>
     nnoremap <Leader>bd :bd<CR>
@@ -113,14 +127,17 @@ call plug#end()
     map <C-k> <C-w>k
     map <C-l> <C-w>l
 
-    autocmd VimEnter * NERDTree
+    "autocmd VimEnter * NERDTree
 
     filetype plugin on
 " }}}
 "
 " Fzf: {{{
     nnoremap <Leader>ff :BLines<CR>
+    "nnoremap <C-f> :Rg 
     nnoremap <Leader>p :GFiles<CR>
+    nnoremap <C-p> :Files<CR>
+    "command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 " }}}
 " Vimspector: {{{
     let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
@@ -179,19 +196,19 @@ call plug#end()
         autocmd FileType cs nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
         nnoremap <Leader>rc :! tmux splitw -v tmux send-keys "dotnet run" ENTER<CR>
 
-        autocmd FileType razor nnoremap <Leader>bb :wa \| ! dotnet build<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
-        autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
-        autocmd FileType razor nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
-        "autocmd FileTyperazors nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
-        autocmd FileType razor nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
-        "autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
-        autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <Leader>bb :wa \| ! dotnet build<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
+        "autocmd FileType razor nmap <silent> gd :OmniSharpGotoDefinition<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fc :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fm :OmniSharpFindMembers<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fi :OmniSharpFindImplementations<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+        "autocmd FileType razor nnoremap <buffer> <Leader>rr :OmniSharpRename<CR>
+        ""autocmd FileTyperazors nnoremap <buffer> <Leader>rr :OmniSharpRenameTo<CR>
+        "autocmd FileType razor nnoremap <Leader> <Space> :OmniSharpGetCodeActions<CR>
+        ""autocmd FileTyperazors,BufWriteCmd <silent> :OmniSharpCodeFormat<CR>
+        "autocmd FileType razor nnoremap <buffer><C-c><C-c> :OmniSharpCodeFormat<CR>
 
         autocmd FileType cshtml nnoremap <Leader>bb :wa \| ! dotnet build<CR>
         autocmd FileType cshtml nnoremap <buffer> <Leader>dd :OmniSharpDocumentation<CR>
@@ -237,14 +254,33 @@ let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
     syntax enable
     "colorscheme sourcerer
     "colorscheme bluewery
-    let g:gruvbox_contrast_dark = 'medium' 
+    " let g:gruvbox_contrast_dark = 'medium' 
+    let g:gruvbox_contrast_dark = 'soft' 
+    let g:gruvbox_underline=1
+    let g:gruvbox_bold=1
+    let g:gruvbox_italic=1
     let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
     colorscheme gruvbox
+    hi! Normal ctermbg=NONE guibg=NONE
+    " set termguicolors
+    "colorscheme PaperColor
+>>>>>>> 8a35b88d94bf43587055c15e648e156475a0f412
     "colorscheme zenburn
     "colorscheme dracula
     " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
+    if (has("termguicolors"))
+        set termguicolors
+    endif
+    if (has("nvim"))
+        let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    endif
+    " let g:enable_bold_font = 1
+    " let g:enable_italic_font = 1
+    " let g:hybrid_transparent_background = 1
+    " colorscheme hybrid_material
+    " let g:airline_theme = "hybrid"
 "}}}
 
 " AIRLINE: {{{
