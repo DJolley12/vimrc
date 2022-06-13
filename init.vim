@@ -69,6 +69,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'https://github.com/zchee/deoplete-go'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
@@ -259,6 +260,7 @@ let g:neoformat_enabled_c = ['clangformat']
 " GO {{{
 autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
 lua require('go').setup()
+if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
 " }}}
 
 " THEME: {{{
