@@ -279,7 +279,9 @@ if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1en
     let g:gruvbox_italic=1
     let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
-    colorscheme gruvbox
+    " colorscheme gruvbox
+    let g:spacegray_low_contrast = 1
+    colorscheme spacegray
     hi! Normal ctermbg=NONE guibg=NONE
     " set termguicolors
     "colorscheme PaperColor
