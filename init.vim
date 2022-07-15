@@ -69,6 +69,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'davidhalter/jedi-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'https://github.com/zchee/deoplete-go'
 Plug 'ryanoasis/vim-devicons'
 Plug 'puremourning/vimspector'
 Plug 'rust-lang/rust.vim'
@@ -84,6 +85,9 @@ Plug 'https://github.com/tpope/vim-dadbod.git', {'do': ':CocInstall coc-db'}
 Plug 'https://github.com/kristijanhusak/vim-dadbod-ui.git'
 Plug 'nanotee/sqls.nvim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'deoplete-plugins/deoplete-clang'
+Plug 'ray-x/go.nvim'
+
 call plug#end()
 
 " DB, sqls lspconfig {{{
@@ -236,13 +240,27 @@ let g:ale_completion_autoimport = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
-let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'] }
+let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'], 'cpp': ['clang'], 'c': ['clang'], 'python': ['pylint'] }
+
+" custom setting for clangformat
+let g:neoformat_cpp_clangformat = {
+    \ 'exe': 'clang-format',
+    \ 'args': ['--style="{IndentWidth: 4}"']
+\}
+let g:neoformat_enabled_cpp = ['clangformat']
+let g:neoformat_enabled_c = ['clangformat']
 
 " RUST {{{
         autocmd FileType rs nnoremap <Leader>bb :wa \| ! cargo build<CR>
         autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
         autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     " }}}
+" }}}
+"
+" GO {{{
+autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+lua require('go').setup()
+if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
 " }}}
 
 " THEME: {{{
