@@ -258,9 +258,14 @@ let g:neoformat_enabled_c = ['clangformat']
 " }}}
 "
 " GO {{{
-autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
-lua require('go').setup()
-if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
+    autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+    lua require('go').setup()
+    if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
+        :lua require'lspconfig'.gopls.setup {
+            on_attach = function(client)
+            require 'illuminate'.on_attach(client)
+        end,
+        }
 " }}}
 
 " THEME: {{{
