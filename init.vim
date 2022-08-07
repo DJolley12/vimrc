@@ -260,8 +260,9 @@ let g:neoformat_enabled_c = ['clangformat']
 "
 " GO {{{
     autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
-    lua require('go').setup()
-    if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
+    :lua require('go').setup()
+    if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1
+    endif
         :lua require'lspconfig'.gopls.setup {
             on_attach = function(client)
             require 'illuminate'.on_attach(client)
@@ -292,7 +293,6 @@ let g:neoformat_enabled_c = ['clangformat']
     hi! Normal ctermbg=NONE guibg=NONE
     " set termguicolors
     "colorscheme PaperColor
->>>>>>> 8a35b88d94bf43587055c15e648e156475a0f412
     "colorscheme zenburn
     "colorscheme dracula
     " colorscheme OceanicNext
