@@ -54,6 +54,7 @@ Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'mhartington/oceanic-next'
 Plug 'https://github.com/iandwelker/rose-pine-vim.git'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " }}}
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -260,7 +261,8 @@ let g:neoformat_enabled_c = ['clangformat']
 " GO {{{
 autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
 lua require('go').setup()
-if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1endif
+if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1 
+endif
 " }}}
 
 " THEME: {{{
@@ -270,9 +272,9 @@ if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1en
     "endif
 
     syntax enable
-    "colorscheme sourcerer
-    "colorscheme bluewery
-    " let g:gruvbox_contrast_dark = 'medium' 
+    " colorscheme sourcerer
+    " colorscheme bluewery
+    let g:gruvbox_contrast_dark = 'medium' 
     let g:gruvbox_contrast_dark = 'soft' 
     let g:gruvbox_underline=1
     let g:gruvbox_bold=1
@@ -280,13 +282,16 @@ if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1en
     let g:gruvbox_transparent_bg = 1
     ""medium, hard, soft
     " colorscheme gruvbox
-    let g:spacegray_low_contrast = 1
-    colorscheme spacegray
+    colorscheme tokyonight
+    " let g:spacegray_low_contrast = 1
+    " colorscheme spacegray
     hi! Normal ctermbg=NONE guibg=NONE
     " set termguicolors
     "colorscheme PaperColor
     "colorscheme zenburn
     "colorscheme dracula
+    " colorscheme OceanicNext
+    " colorscheme rose-pine-dark
     " let g:lightline = { 'colorscheme': 'dracula' }
     "let g:lightline = { 'colorscheme': 'bluewery' }
     if (has("termguicolors"))
@@ -299,7 +304,8 @@ if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1en
     " let g:enable_italic_font = 1
     " let g:hybrid_transparent_background = 1
     " colorscheme hybrid_material
-    " let g:airline_theme = "hybrid"
+    let g:airline_theme = "hybrid"
+    " let g:airline_theme = "tokyonight"
 "}}}
 
 " AIRLINE: {{{
