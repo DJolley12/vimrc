@@ -253,6 +253,7 @@ let g:neoformat_enabled_c = ['clangformat']
 
 " RUST {{{
         autocmd FileType rs nnoremap <Leader>bb :wa \| ! cargo build<CR>
+        autocmd FileType rs nnoremap <Leader>bu :wa \| ! cargo update<CR>
         autocmd FileType rs nnoremap <silent> gd :ALEGoToDefinition<CR>
         autocmd FileType rs nnoremap <buffer> <Leader>fu :ALEFindReferences<CR>
     " }}}
