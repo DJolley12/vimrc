@@ -87,9 +87,24 @@ Plug 'https://github.com/kristijanhusak/vim-dadbod-ui.git'
 Plug 'nanotee/sqls.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'deoplete-plugins/deoplete-clang'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'williamboman/nvim-lsp-installer'
+
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+Plug 'ray-x/guihua.lua' " float term, codeaction and codelens gui support
+
 Plug 'ray-x/go.nvim'
 
 call plug#end()
+
+" LUA: {{{
+    :lua require('treesitter')
+    :lua require('go-nvim')
+    :lua require('lsp-installer')
+" }}}
 
 " DB, sqls lspconfig {{{
     :lua require('db')
@@ -260,15 +275,15 @@ let g:neoformat_enabled_c = ['clangformat']
 " }}}
 "
 " GO {{{
-    autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
-    :lua require('go').setup()
-    if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1
-    endif
-        :lua require'lspconfig'.gopls.setup {
-            on_attach = function(client)
-            require 'illuminate'.on_attach(client)
-        end,
-        }
+    " autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+    " :lua require('go').setup()
+    " if has('nvim')" Enable deoplete on startuplet g:deoplete#enable_at_startup = 1
+    " endif
+    "     :lua require'lspconfig'.gopls.setup {
+    "         on_attach = function(client)
+    "         require 'illuminate'.on_attach(client)
+    "     end,
+    "     }
 " }}}
 
 " THEME: {{{
