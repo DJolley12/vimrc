@@ -23,6 +23,7 @@ set mouse=a
 au CursorHold * checktime
 au FocusGained,BufEnter * :silent! checktime
 au FocusLost,WinLeave * :silent! w
+set completeopt=menu,menuone,noselect
 
 "syntax on
 
@@ -57,7 +58,7 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " }}}
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
 Plug 'OmniSharp/omnisharp-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -152,13 +153,13 @@ EOF
 " }}}
 
 " COC: {{{
-    inoremap <silent><expr> <TAB>
-          \ pumvisible() ? "\<C-n>" :
-          \ <SID>check_back_space() ? "\<TAB>" :
-          \ coc#refresh()
-    imap <C-l> <Plug>(coc-snippets-expand-jump)
-    vmap <C-j> <Plug>(coc-snippets-select)
-    let g:coc_snippet_prev = '<c-k>'
+    " inoremap <silent><expr> <TAB>
+    "       \ pumvisible() ? "\<C-n>" :
+    "       \ <SID>check_back_space() ? "\<TAB>" :
+    "       \ coc#refresh()
+    " imap <C-l> <Plug>(coc-snippets-expand-jump)
+    " vmap <C-j> <Plug>(coc-snippets-select)
+    " let g:coc_snippet_prev = '<c-k>'
 " }}}
 
 " NERDTree: {{{
