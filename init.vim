@@ -26,7 +26,7 @@ au FocusLost,WinLeave * :silent! w
 
 "syntax on
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.nvim/plugged')
 " Themes {{{
 Plug 'relastle/bluewery.vim'
 Plug 'morhetz/gruvbox'
@@ -102,20 +102,34 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
+" nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+
 call plug#end()
 
 " LUA: {{{
-    :lua require('treesitter')
-    :lua require('go-nvim')
-    :lua require('lsp-installer')
-    :lua require('neogit-config')
-    :lua require('devicons-config')
-    :lua require('diffview-config')
+lua <<EOF
+    require('treesitter')
+    require('devicons-config')
+    require('diffview-config')
+    require('neogit-config')
+    require('db')
+    require('sqls')
+    require('cmp-setup')
+    require('go-nvim')
+    require('lsp-installer')
+EOF
 " }}}
 
 " DB, sqls lspconfig {{{
-    :lua require('db')
-    :lua require('sqls')
 " }}}
 
 " General Remappings: {{{
@@ -177,6 +191,7 @@ call plug#end()
     let g:OmniSharp_popup_position = 'peek'
     let g:OmniSharp_start_server = 1
     let g:OmniSharp_server_stdio = 1
+    let g:OmniSharp_server_use_net6 = 1
     let g:omnicomplete_fetch_full_documentation = 1
     let g:OmniSharp_timeout = 30
     let g:OmniSharp_popup_options = {
