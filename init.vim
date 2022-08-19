@@ -109,6 +109,8 @@ call plug#end()
     :lua require('go-nvim')
     :lua require('lsp-installer')
     :lua require('neogit-config')
+    :lua require('devicons-config')
+    :lua require('diffview-config')
 " }}}
 
 " DB, sqls lspconfig {{{
