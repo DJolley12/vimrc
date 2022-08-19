@@ -97,6 +97,10 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'ray-x/guihua.lua' " float term, codeaction and codelens gui support
 
 Plug 'ray-x/go.nvim'
+Plug 'TimUntersberger/neogit'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'sindrets/diffview.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -104,6 +108,7 @@ call plug#end()
     :lua require('treesitter')
     :lua require('go-nvim')
     :lua require('lsp-installer')
+    :lua require('neogit-config')
 " }}}
 
 " DB, sqls lspconfig {{{
@@ -257,6 +262,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
 let g:ale_linters = { 'cs': ['OmniSharp'], 'rust': ['analyzer'], 'cpp': ['clang'], 'c': ['clang'], 'python': ['pylint'] }
+" let g:ale_linters = { 'cs': ['OmniSharp'], 'cpp': ['clang'], 'c': ['clang'], 'python': ['pylint'] }
 
 " custom setting for clangformat
 let g:neoformat_cpp_clangformat = {
